@@ -22,7 +22,7 @@ program to generate the output .h file.
 
 This .h file implements 2 classes, CTuple and CCompatibleTuple. The difference between them is that CTuple defines the member variables in the same order as the type
 template arguments, while CCompatibleTuple defines them in the opposite order, giving it a memory layout compatible with std::tuple, albeit at a slight cost in debug code. Because of
-the order layout in CTuple being forward, it is able to initialize the struct without defining constructors - just using brace initialization. This is muuch better for debug code generation 
+the order layout in CTuple being forward, it is able to initialize the struct without defining constructors - just using brace initialization. This is much better for debug code generation 
 and static initialization. OTOH CCompatibleTuple has enhanced compatibility with std::tuple because of having the same memory layout. This allows, for instance, passing a CCompatibleTuple
 to a function expecting a reference to an std::tuple.
 

@@ -146,10 +146,18 @@ void PrintTupleDef( int nNumFields, std::string const &className, bool bUseCompa
 	for( int nArg = 0; nArg < nNumFields; nArg++ )
 	{
 		sTemplateArgs += "typename Type";
-		sTemplateArgs.push_back( '0' + nArg );
+		if ( nArg > 9 )
+		{
+			sTemplateArgs.push_back( '0' + ( nArg / 10 ) );
+		}
+		sTemplateArgs.push_back( '0' + ( nArg % 10 ) );
 		sTemplateArgs += "_t";
 		sTypeList += "Type";
-		sTypeList.push_back( '0' + nArg );
+		if ( nArg > 9 )
+		{
+			sTypeList.push_back( '0' + ( nArg / 10 ) );
+		}
+		sTypeList.push_back( '0' + ( nArg % 10 ) );
 		sTypeList += "_t";
 
 		if ( nArg != nNumFields -1 )

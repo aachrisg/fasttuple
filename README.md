@@ -29,7 +29,7 @@ to a function expecting a reference to an std::tuple.
 # API
    These classes follow the basic api of std::tuple, including deduction guides. You can access fields using std::get, construct them the same way, etc. In addition there are several convenience APIs:
    
-   - You can use a member Get<index>() or Get<type>() to access the fields.
+   - You can use a member Get\<index\>() or Get\<type\>() to access the fields.
   - You can also conveniently access the fields as _0, _1, ...  This has the advantage of generating good code in debug builds without relying on inlining.
   
 # TupleGen.cpp

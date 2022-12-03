@@ -16,6 +16,7 @@ This has several implications for code generation, both for optimized code, and 
 - When viewed in the debugger, instead of seeing a simple struct, you will see a nested struct (unless you are using a debug visualizers to neaten up the display).
 - You must access fields using a non-member get function (std::get)
 - The member variables are stored in memory in the opposite order of what you would expect. This is both confusing, and makes the struct layout incompatible with an identical named struct.
+- THe more items in an std::tuple, the deeper the template nesting level is, exposing the possibility of running into compiler limits or asymptotically worsening compile times on large tuples.
 
 The only other way to implement an std::tuple class would have been to define one template for each number of arguments. So, that's what I did, using a simple 
 program to generate the output .h file.

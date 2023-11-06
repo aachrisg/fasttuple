@@ -2678,7 +2678,7 @@ namespace std
 	template<typename fieldType, typename ...types> FORCEINLINE constexpr auto get( CTuple<types...> &tuple ) { return tuple.template Get<fieldType>(); }
 	// Deduction guide for constructing a tuple
 	template<typename ...types>
-	 std::tuple( CTuple<types...> const & ) -> std::tuple<types...>;
+	    tuple( CTuple<types...> const & ) -> tuple<types...>;
 }
 
 template<typename ...types> class CCompatibleTuple;
@@ -5650,6 +5650,5 @@ namespace std
 	template<typename fieldType, typename ...types> FORCEINLINE constexpr auto get( CCompatibleTuple<types...> &tuple ) { return tuple.template Get<fieldType>(); }
 	// Deduction guide for constructing a tuple
 	template<typename ...types>
-	 std::tuple( CCompatibleTuple<types...> const & ) -> std::tuple<types...>;
+	    tuple( CCompatibleTuple<types...> const & ) -> tuple<types...>;
 }
-

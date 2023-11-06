@@ -364,7 +364,7 @@ void GenTuple( std::string const &className, bool bCompat )
 	PrintLn( "template<typename fieldType, typename ...types> FORCEINLINE ", s_sConstExpr, "auto get( ", className, "<types...> &tuple ) { return tuple.template Get<fieldType>(); }" );
 	PrintLn( "// Deduction guide for constructing a tuple" );
 	PrintLn( "template<typename ...types>" );
-	PrintLn( " std::tuple( ", className, "<types...> const & ) -> std::tuple<types...>;" );
+	PrintLn( " tuple( ", className, "<types...> const & ) -> tuple<types...>;" );
 
 
 	AdjustIndent( -1 );
